@@ -11,14 +11,14 @@ class CustomInputField extends StatelessWidget {
   final TextInputType keyboardType;  // Type de clavier (normal, email, etc.)
 
   const CustomInputField({
-    Key? key,
+    super.key,  // Changed to super parameter
     required this.hintText,
     this.obscureText = false,
     this.controller,
     this.onChanged,
     this.errorText,
     this.keyboardType = TextInputType.text,  // Par défaut, clavier normal
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,9 @@ class CustomInputField extends StatelessWidget {
         ),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(color: AppTheme.accentColor.withOpacity(0.7)),
+          hintStyle: TextStyle(
+            color: AppTheme.accentColor.withAlpha(178),  // Changed from withOpacity(0.7) to withAlpha(178)
+          ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 16,

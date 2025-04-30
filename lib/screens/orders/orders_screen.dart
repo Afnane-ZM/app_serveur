@@ -1,4 +1,4 @@
-// lib/screens/orders/orders_screen.dart (modifications)
+// lib/screens/orders/orders_screen.dart (with fixes)
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -505,7 +505,7 @@ void _showOrderDetailsModal(BuildContext context, Order order) {
                           Expanded(
                             flex: 1,
                             child: Text(
-                              '${item.price.toStringAsFixed(2)}',
+                              item.price.toStringAsFixed(2),  // First fix here
                               textAlign: TextAlign.right,
                             ),
                           ),
@@ -531,7 +531,7 @@ void _showOrderDetailsModal(BuildContext context, Order order) {
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                   Text(
-                    '${total.toStringAsFixed(2)}',
+                    total.toStringAsFixed(2),  // Second fix here
                     style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                 ],

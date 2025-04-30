@@ -6,14 +6,14 @@ import '../../utils/theme.dart';
 class OrderCard extends StatelessWidget {
   final Order order;
   final VoidCallback onActionPressed;
-  final bool isNew; // Pour déterminer si c'est une nouvelle commande ou une commande prête
+  final bool isNew; 
 
   const OrderCard({
-    Key? key,
+    super.key,
     required this.order,
     required this.onActionPressed,
     required this.isNew,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class OrderCard extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Row(
           children: [
-            // Avatar pour l'icône utilisateur
+          
             const CircleAvatar(
               backgroundColor: AppTheme.accentColor,
               child: Icon(

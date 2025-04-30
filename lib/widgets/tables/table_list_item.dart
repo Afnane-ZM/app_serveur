@@ -8,10 +8,10 @@ class TableListItem extends StatelessWidget {
   final Function onTap;
 
   const TableListItem({
-    Key? key,
+    super.key,
     required this.table,
     required this.onTap,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {

@@ -7,10 +7,10 @@ class BottomNavigation extends StatelessWidget {
   final Function(int) onTap;
 
   const BottomNavigation({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +41,13 @@ class BottomNavigation extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.white : Colors.transparent, 
+          color: isSelected ? Colors.white : Colors.transparent,
           shape: BoxShape.circle,
         ),
         child: Icon(
           icon,
-          color: isSelected ? AppTheme.accentColor : Colors.white.withAlpha(200),
+          color:
+              isSelected ? AppTheme.accentColor : Colors.white.withAlpha(200),
           size: 22,
         ),
       ),

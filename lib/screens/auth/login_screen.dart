@@ -11,17 +11,17 @@ class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _emailController = TextEditingController();  // Changé de _usernameController
+class LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  String? _emailError;  // Pour la validation d'email
+  String? _emailError;
   
   @override
   void dispose() {
-    _emailController.dispose();  // Changé de _usernameController
+    _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
@@ -115,9 +115,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   // Champ email
                   CustomInputField(
                     controller: _emailController,
-                    hintText: AppConstants.emailHint,  // Nouveau texte pour l'email
-                    errorText: _emailError,  // Affichage des erreurs de validation
-                    keyboardType: TextInputType.emailAddress,  // Clavier spécifique pour email
+                    hintText: AppConstants.emailHint,
+                    errorText: _emailError,
+                    keyboardType: TextInputType.emailAddress,
                     onChanged: (_) {
                       // Si l'utilisateur modifie le champ, on efface l'erreur
                       if (_emailError != null) {
@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: ElevatedButton(
                           onPressed: state.status == AuthStatus.loading
                               ? null
-                              : _tryLogin,  // Utilisation de la nouvelle fonction de login
+                              : _tryLogin,
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF245536),
                             padding: const EdgeInsets.symmetric(vertical: 16),

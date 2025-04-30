@@ -5,14 +5,12 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'blocs/auth/auth_bloc.dart';
 import 'blocs/orders/order_bloc.dart';
 import 'blocs/notifications/notification_bloc.dart';
-import 'blocs/messages/message_bloc.dart';
 import 'blocs/profile/profile_bloc.dart';
 import 'blocs/home/home_bloc.dart';
 import 'core/routes.dart';
 import 'data/repositories/auth_repository.dart';
 import 'data/repositories/order_repository.dart';
 import 'data/repositories/notification_repository.dart';
-import 'data/repositories/message_repository.dart';
 import 'data/repositories/profile_repository.dart'; 
 import 'data/repositories/home_repository.dart';
 import 'utils/theme.dart';
@@ -47,9 +45,6 @@ class MyApp extends StatelessWidget {
         RepositoryProvider<NotificationRepository>(
           create: (context) => NotificationRepository(),
         ),
-        RepositoryProvider<MessageRepository>(
-          create: (context) => MessageRepository(),
-        ),
         RepositoryProvider<ProfileRepository>( 
           create: (context) => ProfileRepository(),
         ),
@@ -72,11 +67,6 @@ class MyApp extends StatelessWidget {
           BlocProvider<NotificationBloc>(
             create: (context) => NotificationBloc(
               notificationRepository: context.read<NotificationRepository>(),
-            ),
-          ),
-          BlocProvider<MessageBloc>(
-            create: (context) => MessageBloc(
-              messageRepository: context.read<MessageRepository>(),
             ),
           ),
           BlocProvider<HomeBloc>(

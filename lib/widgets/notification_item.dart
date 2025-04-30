@@ -7,21 +7,21 @@ class NotificationItem extends StatelessWidget {
   final UserNotification notification;
 
   const NotificationItem({
-    Key? key,
+    super.key, 
     required this.notification,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16), // Augmenter les marges
-      padding: const EdgeInsets.all(14), // Augmenter le padding interne
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16), 
+      padding: const EdgeInsets.all(14), 
       decoration: BoxDecoration(
         color: AppTheme.secondaryColor,
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [  // Ajouter une légère ombre pour plus de profondeur
+        boxShadow: [  
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),  
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -30,15 +30,15 @@ class NotificationItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Icône de notification
+          
           const Icon(
             Icons.notifications_active,
             color: AppTheme.primaryColor,
-            size: 26,  // Agrandir légèrement l'icône
+            size: 26, 
           ),
-          const SizedBox(width: 12),  // Augmenter l'espacement
+          const SizedBox(width: 12), 
           
-          // Contenu de la notification
+          
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,15 +47,15 @@ class NotificationItem extends StatelessWidget {
                   notification.content,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 15,  // Police légèrement plus grande
+                    fontSize: 15,  
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(height: 6),  // Plus d'espace entre le texte et l'horodatage
+                const SizedBox(height: 6),
                 Text(
                   notification.getTimeAgo(),
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                     fontSize: 12,
                   ),
                 ),

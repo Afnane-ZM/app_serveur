@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/notifications/notification_screen.dart';
-import '../screens/messages/contact_list_screen.dart';
 import '../screens/profile/profile_screen.dart';
 import '../screens/orders/orders_screen.dart'; 
 import '../screens/tables/tables_screen.dart';
@@ -19,8 +18,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case AppConstants.notificationsRoute:
         return MaterialPageRoute(builder: (_) => const NotificationScreen());
-      case AppConstants.messagesRoute:
-        return MaterialPageRoute(builder: (_) => const ContactListScreen());
+     
       case '/profile':
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
       case '/orders': // Nouvelle route pour l'écran des commandes

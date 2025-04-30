@@ -8,9 +8,9 @@ class OrderDetailModal extends StatelessWidget {
   final Order order;
 
   const OrderDetailModal({
-    Key? key,
+    super.key,
     required this.order,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {

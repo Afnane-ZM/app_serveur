@@ -362,7 +362,7 @@ class _TablesScreenState extends State<TablesScreen> {
         Navigator.of(context).pushReplacementNamed('/orders');
         break;
       case 2:
-        // Already on tables screen
+        
         break;
       case 3:
         Navigator.of(context).pushReplacementNamed('/profile');

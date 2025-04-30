@@ -5,7 +5,6 @@ import '../../blocs/notifications/notification_bloc.dart';
 import '../../blocs/notifications/notification_event.dart';
 import '../../blocs/notifications/notification_state.dart';
 import '../../utils/theme.dart';
-import '../../utils/constants.dart';
 import '../../widgets/notification_item.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -30,15 +29,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
       appBar: AppBar(
         backgroundColor: AppTheme.primaryColor,
         elevation: 0,
-        toolbarHeight: 70, // Augmenter la hauteur de l'AppBar
+        toolbarHeight: 70, 
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: AppTheme.accentColor),
           onPressed: () => Navigator.of(context).pop(),
-          padding: const EdgeInsets.only(left: 16, top: 8), // Ajuster le padding
+          padding: const EdgeInsets.only(left: 16, top: 8), 
         ),
-        centerTitle: true, // Centrer le titre
+        centerTitle: true,
         title: const Padding(
-          padding: EdgeInsets.only(top: 8), // Ajuster le padding du titre
+          padding: EdgeInsets.only(top: 8), 
           child: Text(
             'Notification',
             style: TextStyle(
@@ -48,18 +47,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
             ),
           ),
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16, top: 8), // Ajuster le padding
-            child: IconButton(
-              icon: const Icon(Icons.chat_bubble_outline, color: AppTheme.accentColor),
-              onPressed: () {
-                // Rediriger vers l'écran de messagerie (liste des contacts)
-                Navigator.of(context).pushNamed(AppConstants.messagesRoute);
-              },
-            ),
-          ),
-        ],
+        
       ),
       body: BlocConsumer<NotificationBloc, NotificationState>(
         listener: (context, state) {
@@ -91,7 +79,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               context.read<NotificationBloc>().add(LoadNotifications());
             },
             child: ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 12), // Ajouter du padding vertical à la liste
+              padding: const EdgeInsets.symmetric(vertical: 12),
               itemCount: state.notifications.length,
               itemBuilder: (context, index) {
                 final notification = state.notifications[index];

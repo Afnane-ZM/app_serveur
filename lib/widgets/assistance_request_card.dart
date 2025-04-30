@@ -8,10 +8,10 @@ class AssistanceRequestCard extends StatelessWidget {
   final VoidCallback onCompletePressed;
 
   const AssistanceRequestCard({
-    Key? key,
+    super.key, // Changed to super parameter syntax
     required this.request,
     required this.onCompletePressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +91,7 @@ class AssistanceRequestCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.1),
+                  color: Colors.green.withValues(alpha: 0.1), // Fixed deprecated withOpacity
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(

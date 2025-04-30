@@ -9,7 +9,7 @@ import '../blocs/profile/profile_event.dart';
 class AppBlocListener extends StatelessWidget {
   final Widget child;
 
-  const AppBlocListener({Key? key, required this.child}) : super(key: key);
+  const AppBlocListener({super.key,required this.child}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class AppBlocListener extends StatelessWidget {
               previous.status != current.status && 
               current.status == OrderStatus.served,
           listener: (context, state) {
-            // Quand une commande est servie, incrémenter le compteur dans le profil
+            
             context.read<ProfileBloc>().add(IncrementHandledOrders());
           },
         ),

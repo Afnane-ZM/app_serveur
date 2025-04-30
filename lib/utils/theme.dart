@@ -29,7 +29,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         border: InputBorder.none,
-        hintStyle: TextStyle(color: accentColor.withOpacity(0.7)),
+        hintStyle: TextStyle(color: accentColor.withAlpha(179)), // Fixed deprecated withOpacity(0.7)
       ),
       textTheme: const TextTheme(
         displayLarge: TextStyle(

@@ -204,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
         }
 
         // Combiner les commandes à afficher: nouvelles commandes et commandes prêtes
-        final List<Order> ordersToShow = [...state.newOrders.where((order) => order.status == 'preparing').toList(), ...state.readyOrders];
+        final List<Order> ordersToShow = [...state.newOrders.where((order) => order.status == 'preparing'), ...state.readyOrders];
         final int maxOrdersToShow = 2; 
         final bool showViewMore = ordersToShow.length > maxOrdersToShow;
         final displayedOrders = showViewMore && !state.currentFilter.contains('Tous') 

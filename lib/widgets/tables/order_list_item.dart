@@ -8,11 +8,11 @@ class OrderListItem extends StatelessWidget {
   final Function onCancel;
 
   const OrderListItem({
-    Key? key,
+    super.key,  // Changed to super parameter
     required this.order,
     required this.onTap,
     required this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class OrderListItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withAlpha(13),  // Changed from withOpacity(0.05) to withAlpha(13)
               blurRadius: 3,
               offset: const Offset(0, 1),
             ),
